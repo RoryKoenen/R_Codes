@@ -12,6 +12,8 @@ The script was designed to correct the inactivation of factor Xa by TFPI, monito
 The data can be imported directly from the clipboard. Important considerations are:
 - There is a script for Mac OSX and for Windows. This is because the clipboard is addressed differently in these environments.
 - The first column of the data always contains the substrate conversion curve on which all corrections are based. This generally means that the enzymatic substrate conversion is recorded in the absence of an inhibitor but else under the same conditions as all other recorded curves. Make sure that this curve is straight and has no dips or lags.
+- The dimensions are minutes for time and milli-OD for the optical densities. Using seconds and ODs might give wrong results.
+- The locale is British-American, meaning periods to separate decimal numbers.
 - The data to be imported should be "rectangular", meaning only the named columns with the respective readings. No notes, dates, filenames etc.
 - The titles or annotations are always in the first row of the data-array. These will be converted into syntactically correct titles for R.
 - The script corrects for empty cells, but be aware that all readings will be truncated to the length of the shortest measurement. This is because the used R data.frame class can only contain vectors with the same length.
